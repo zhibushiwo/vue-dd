@@ -1,5 +1,7 @@
 <template>
-  
+  <div class="contack">
+      
+  </div>
 </template>
 
 <script>
