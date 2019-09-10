@@ -1,5 +1,7 @@
 <template>
-  
+  <div class="ding">
+      
+  </div>
 </template>
 
 <script>

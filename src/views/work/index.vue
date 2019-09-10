@@ -1,5 +1,7 @@
 <template>
-  
+  <div class="work">
+      
+  </div>
 </template>
 
 <script>
