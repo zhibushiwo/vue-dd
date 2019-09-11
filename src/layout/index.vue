@@ -2,7 +2,7 @@
   <div class="layout">
       <SideBar />
       <LayoutHead />
-      <router-view />
+      <router-view class="content" />
   </div>
 </template>
 
@@ -25,5 +25,10 @@ export default {
 <style scoped lang="scss">
 .layout{
     height: 100%;
+    display: flex;
+    .content{
+      margin-top: $layout-head-height;
+      flex: 1;
+    }
 }
 </style>

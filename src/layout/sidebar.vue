@@ -3,25 +3,19 @@
     <div class="avatar-wrap">
       <img src="../assets/avatar.jpg"  class="avatar"/>
     </div>
-    <div class="iconMain">
-      
-      <router-link to="/message" class="link">
-        <i class="iconfont icon-icon_message"></i>
-        消息
+    <ul class="iconMain">
+      <router-link
+       v-for="(item,index) in menuRoutes" 
+      :key="index"
+      class="link"
+      tag="li"
+      :to="item.path"
+      active-class="link-active"
+      >
+      <i class="iconfont" :class="item.meta.icon"></i>
+      <span>{{item.meta.title}}</span>
       </router-link>
-       <router-link to="/ding"  class="link">
-        <i class="iconfont icon-icon_synergy "></i>
-        Ding
-      </router-link>
-       <router-link to="/work"  class="link">
-        <i class="iconfont icon-icon_dingtalk_line "></i>
-        工作
-      </router-link>
-       <router-link to="/contack"  class="link">
-        <i class="iconfont icon-icon_namecard "></i>
-        联系人
-      </router-link>
-    </div>
+    </ul>
     <div class="iconSub">
       <i class="iconfont icon-icon_message"></i>
       <i class="iconfont icon-icon_synergy"></i>
@@ -32,12 +26,12 @@
 </template>
 
 <script>
-import menuRoutes from '@/router.js'
+import {menuRoutes} from '@/router.js'
 export default {
     name:"",
     data() {
       return {
-        menu:menuRoutes
+        menuRoutes
       }
     },
     components: {
@@ -60,27 +54,38 @@ export default {
     @include round(70px);
     border: 2px solid #fff;
   }
-
+  .link{
+    color: #78c2ff;
+    &-active{
+      color: #fff;
+    }
+  }
   .iconMain{
     flex:1;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .iconfont{
-      font-size: 40px;
-      &.actived{
-        color: #fff;
+   
+    .link{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+      .iconfont{
+        font-size: 40px;
       }
     }
+    
   }
   .iconSub{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    color: #78c2ff;
+    font-size: 25px;
     .iconfont{
       font-size: 25px;
+      margin-bottom: 7px;
     }
   }
 }
