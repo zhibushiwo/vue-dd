@@ -6,17 +6,25 @@
 
 <script>
 export default {
+    name:"",
+    data() {
+      return {
 
+      }
+    },
+    components: {
+
+    }
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .head{
     position: absolute;
     top:0;
     right: 0;
-    left: $side-bar-width;
-    border-bottom: 1px solid #ccc;
+    left:$side-bar-width;
     height: $layout-head-height;
+    border-bottom: 1px solid #ddd;
 }
 </style>

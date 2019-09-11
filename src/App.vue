@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <Layout />
+     <Layout />
   </div>
 </template>
 <script>
-import Layout from '@/layout'
+import Layout from '@/layout/'
 export default {
+  name:"app",
   components:{
     Layout
   }

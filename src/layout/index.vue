@@ -2,24 +2,28 @@
   <div class="layout">
       <SideBar />
       <LayoutHead />
-      <router-view/>
+      <router-view />
   </div>
 </template>
 
 <script>
-import SideBar from './sidebar'
 import LayoutHead from './head'
-
+import SideBar from './sidebar'
 export default {
-    components:{
-        SideBar,LayoutHead
+    name:"layout",
+    data() {
+      return {
+
+      }
+    },
+    components: {
+        LayoutHead,SideBar
     }
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .layout{
-    width: 100%;
     height: 100%;
 }
-</style>>
+</style>
