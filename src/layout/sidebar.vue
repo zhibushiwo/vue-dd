@@ -51,7 +51,7 @@ export default {
   align-items: center;
   padding-top: 10px;
   .avatar{
-    @include round(70px);
+    @include round(60px);
     border: 2px solid #fff;
   }
   .link{
@@ -72,7 +72,7 @@ export default {
       align-items: center;
       margin-bottom: 15px;
       .iconfont{
-        font-size: 40px;
+        font-size: 30px;
       }
     }
     
