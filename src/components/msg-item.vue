@@ -1,7 +1,3 @@
-<template>
-  
-</template>
-
 <script>
 import imgUrl from '@/assets/avatar.jpg'
 export default {
@@ -30,12 +26,13 @@ export default {
     },
     render(){
         return   (
-            <div class= {`msg-item  ${isSend === 0 ? "mine":"" }` }>
+            <div class= {`msg-item  ${this.isSend === 0 ? "mine":"" }` }>
+                <div class= "time">{this.time}</div>
                 <div class="avatarWrap">
-                    <img src={avatar} />
+                    <img src={this.avatar} />
                 </div>
                 <div class="content"> 
-                    <div> {content} </div>
+                    <div> {this.content} </div>
                 </div>
             </div>
         ) 
@@ -48,20 +45,37 @@ export default {
 .msg-item{
     height: 40px;
     display: flex;
+    position: relative;
+    .time{
+        position: absolute;
+        top: -20px;
+        color:#ccc;
+        left:50px;
+    }
     .avatarWrap{
+        margin: 0 5px;
         img{
-            @include round(30px);
+            @include round(40px);
         }
     }
     .content{
         background: #fff;
         color: black;
+        border-radius: 3px 8px 8px 8px;
+        line-height: 30px;
+        padding: 5px 10px;
+        font-size: $font-size-lg;
     }
     &.mine{
         flex-direction: row-reverse;
+        .time{
+            left: auto;
+            right: 50px;
+        }
         .content{
             background:$theme-color;
             color: #fff;
+            border-radius: 8px 3px 8px 8px;
         }
     }
 

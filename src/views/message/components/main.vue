@@ -1,6 +1,6 @@
 <template>
-  <div class="main">
-      <Msg v-for="item in msgData"  :key="/>
+  <div class="chatMain">
+      <Msg v-for="(item,index) in msgData"  :key="index"  :content= item.content :time = item.time :isSend= item.isSend  class="msg-item"  />
   </div>
 </template>
 
@@ -11,32 +11,32 @@ export default {
     return {
       msgData:[
         {
-          content:"hello world",
+          content:"hello worldxxxxx",
           time:"14:14",
           isSend:0
         },
         {
-          content:"hello world",
+          content:"hello worldxxxxx",
           time:"14:14",
           isSend:0
         },
         {
-          content:"hello world",
+          content:"hello worldxxxx",
           time:"14:14",
           isSend:1
         },
         {
-          content:"hello world",
+          content:"hello worldxxxxxxxxxxxxxxxxx",
           time:"14:14",
           isSend:0
         },
         {
-          content:"hello world",
+          content:"hello worldxxxxxxxxxxxxxxxxx",
           time:"14:14",
           isSend:1
         },
         {
-          content:"hello world",
+          content:"hello worldxxxxxx",
           time:"14:14",
           isSend:0
         }
@@ -50,5 +50,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.chatMain{
+  padding: 10px;
+  .msg-item{
+    margin: 30px 5px;
+  }
+}
 </style>
