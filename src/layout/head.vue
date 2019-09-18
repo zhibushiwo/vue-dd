@@ -1,7 +1,9 @@
 <template>
   <div class="head">
-
-    <ChatHead :avatar="user.avatar" :userName="user.userName" :userDetail="user.userDetail"  v-if="$route.name==='message'" />
+    <div class="left"></div>
+    <div class="right">
+      <ChatHead :avatar="user.avatar" :userName="user.userName" :userDetail="user.userDetail"  v-if="$route.name==='message'" />
+    </div>
   </div>
 </template>
 
@@ -39,6 +41,16 @@ export default {
   left: $side-bar-width;
   height: $layout-head-height;
   border-bottom: 1px solid #ddd;
-  padding: 5px 15px;
+  
+  display: flex;
+  .left{
+    width: $aside-width;
+    border-right: 1px solid #ddd;
+  }
+  .right{
+    flex: 1;
+    padding: 5px 15px;
+  }
 }
+
 </style>

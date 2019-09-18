@@ -1,28 +1,29 @@
 <template>
   <div class="history">
-    <ChatItem />
-    <ChatItem />
-    <ChatItem />
-    <ChatItem />
+    <ChatItem v-for=" n in 12 " :key="n" class="chat-item" />
   </div>
 </template>
 
 <script>
-import ChatItem from '@/components/chat-item.vue'
+import ChatItem from "@/components/chat-item.vue";
 export default {
-  data(){
+  data() {
     return {
-      contactHistory:[]
-    }
+      contactHistory: []
+    };
   },
-  components:{
+  components: {
     ChatItem
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-.history{
-    border-right: 1px solid #ddd;
+.history {
+  overflow: auto;
+  border-right: 1px solid #ddd;
+  .chat-item + .chat-item {
+    border-top: 1px solid #eee;
+  }
 }
 </style>

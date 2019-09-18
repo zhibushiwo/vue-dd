@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .msg-item{
-    height: 40px;
+    min-height: 40px;
     display: flex;
     position: relative;
     .time{
@@ -65,6 +65,9 @@ export default {
         line-height: 30px;
         padding: 5px 10px;
         font-size: $font-size-lg;
+        max-width: 60%;
+        word-wrap:break-word;
+        word-break:break-all;
     }
     &.mine{
         flex-direction: row-reverse;
