@@ -1,11 +1,10 @@
 <template>
   <div class="contact">
       <div class="navBar">
-       <ContactNav v-for="(item,index) in navs" :key="index"  :iconType = item.iconType  :iconColor = item.iconColor :title = item.title />
-
+       <ContactNav v-for="(item,index) in navs" :key="index"  :iconType = item.iconType  :iconColor = item.iconColor :title = item.title :to=item.to />
       </div>
       <div class="content">
-
+        <router-view></router-view>
       </div>
   </div>
 </template>
@@ -23,21 +22,25 @@ export default {
           iconType:"icon-icon_meeting_fill",
           iconColor:"skyblue",
           title:"我的好友",
+          to:"/contact/friends"
         },
         {
           iconType:"icon-icon_newapplication_",
           iconColor:"green",
           title:"新的好友",
+          to:"/contact/newfriends"
         },
         {
           iconType:"icon-icon_meeting_fill",
           iconColor:"crimson",
           title:"我的群组",
+          to:"/contact/groups"
         },
         {
           iconType:"icon-icon_boss_fill",
           iconColor:"orange",
           title:"特别关注",
+          to:"/contact/speical"
         }
       ]
     }

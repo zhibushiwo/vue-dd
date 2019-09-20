@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="nav" @click="toNav">
     <div class="icon">
       <i class="iconfont" :class="iconType" :style="{color:iconColor}"></i>
     </div>
@@ -9,23 +9,28 @@
 
 <script>
 export default {
-  props: ["iconType", "iconColor", "title"]
+  props: ["iconType", "iconColor", "title", "to"],
+  methods: {
+    toNav() {
+      if (this.$route.path !==  this.to) this.$router.push({ path: this.to });
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .nav {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    font-size: $font-size-lg ;
-    border-bottom: 1px solid $border-color-light;
-    padding: 0 15px;
-    .icon{
-        margin-right: 15px;
-        .iconfont{
-            font-size: 40px;
-        }
+  height: 70px;
+  display: flex;
+  align-items: center;
+  font-size: $font-size-lg;
+  border-bottom: 1px solid $border-color-light;
+  padding: 0 15px;
+  .icon {
+    margin-right: 15px;
+    .iconfont {
+      font-size: 40px;
     }
+  }
 }
 </style>

@@ -71,6 +71,9 @@ export default {
       flex-direction: column;
       align-items: center;
       margin-bottom: 15px;
+      &:hover{
+        color: #fff;
+      }
       .iconfont{
         font-size: 30px;
       }
@@ -82,10 +85,10 @@ export default {
     flex-direction: column;
     align-items: center;
     color: #78c2ff;
-    font-size: 25px;
+    font-size: 26px;
     .iconfont{
       font-size: 25px;
-      margin-bottom: 7px;
+      margin-bottom: 10px;
     }
   }
 }

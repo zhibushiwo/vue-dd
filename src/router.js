@@ -36,6 +36,24 @@ export const menuRoutes = [
     path: '/contact',
     name: 'contact',
     component: () => import('./views/contact/index.vue'),
+    children:[
+      {
+        path:"friends",
+        component: () => import('./views/contact/friends.vue'),
+      },
+      {
+        path:"newfriends",
+        component: () => import('./views/contact/newfriends.vue'),
+      },
+      {
+        path:"groups",
+        component: () => import('./views/contact/groups.vue'),
+      },
+      {
+        path:"speical",
+        component: () => import('./views/contact/speical.vue'),
+      }
+    ],
     meta: {
       title: "通讯录",
       icon: "icon-icon_addresslist_fil"

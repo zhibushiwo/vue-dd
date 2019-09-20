@@ -46,6 +46,9 @@ export default {
   height: 70px;
   padding: 10px;
   align-items: center;
+  &:hover{
+    background: #eee;
+  }
   .avatar-wrap {
     img {
       @include round(40px);
