@@ -1,14 +1,11 @@
 <template>
-    <div class="">
-        
+    <div class="base-table">
+
     </div>
 </template>
 
 <script>
 export default {
-    props: {
-
-    },
     data() {
         return {
 

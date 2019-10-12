@@ -3,7 +3,7 @@
       <div class="navBar">
        <ContactNav v-for="(item,index) in navs" :key="index"  :iconType = item.iconType  :iconColor = item.iconColor :title = item.title :to=item.to />
       </div>
-      <div class="content">
+      <div class="router-content">
         <router-view></router-view>
       </div>
   </div>
@@ -14,6 +14,9 @@ import ContactNav from './components/nav'
 export default {
   components:{
     ContactNav
+  },
+  created(){
+    console.log(process.env.VUE_APP_TITLE,process.env.NODE_ENV)
   },
   data(){
     return {
@@ -54,6 +57,9 @@ export default {
   .navBar{
     width: $aside-width;
     border-right: 1px solid #ddd;
+  }
+  .router-content{
+    flex: 1;
   }
 }
 </style>
