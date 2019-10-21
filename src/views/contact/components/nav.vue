@@ -12,6 +12,7 @@ export default {
   props: ["iconType", "iconColor", "title", "to"],
   methods: {
     toNav() {
+      if( !this.to) return false;
       if (this.$route.path !==  this.to) this.$router.push({ path: this.to });
     }
   }
@@ -20,7 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  height: 70px;
+  height: 75px;
   display: flex;
   align-items: center;
   font-size: $font-size-lg;

@@ -1,70 +1,65 @@
 <template>
   <div class="special">
-    <div class="header">
-      <div class="title">
-        <div class="icon">
-          <i class="iconfont icon-icon_meeting_fill" style="color:orange"></i>
-        </div>
-        <div>特别关注</div>
-      </div>
+    <div class="title">
+      <ContactNav class="nav" :iconType = navs.iconType  :iconColor = navs.iconColor :title = navs.title />
     </div>
-    <FriendTable :friends="friends" />
+    <div class="friendlist">
+      <FriendItem v-for="(item,index) in friends" :key="index" :avatarUrl="item.avatar" :name="item.name" class="friend" />
+    </div>
   </div>
 </template>
 
 <script>
-import FriendTable from "./components/friend-table";
-import avatar from "@/assets/avatar.jpg";
+import FriendItem from './components/friend-item'
+import ContactNav from './components/nav'
+import imgUrl from "@/assets/avatar.jpg";
 export default {
-  data() {
+  components:{
+    FriendItem,ContactNav
+  },
+  data(){
     return {
-      friends: [
+       navs:{
+          iconType:"icon-icon_boss_fill",
+          iconColor:"orange",
+          title:"特别关注"
+        },
+      friends:[
         {
-          avatar: avatar,
-          userName: "河马"
+          avatar:imgUrl,
+          name:"河马1"
         },
         {
-          avatar: avatar,
-          userName: "河马"
-        },
-        {
-          avatar: avatar,
-          userName: "河马"
+          avatar:imgUrl,
+          name:"河马2"
         }
       ]
-    };
-  },
-  components: {
-    FriendTable
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-.special {
-  .header {
+.special{
+    .title{
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid $border-color-light;
+    padding-left: 5px;
+    padding-right: 20px;
     align-items: center;
-    font-size: $font-size-lg;
-    border-bottom: 1px solid $border-color;
-    padding: 5px 15px;
-    .title {
-      display: flex;
-      align-items: center;
+    .nav{
+      border-bottom: 0;
+    }
+    .icon-icon_add{
+      font-size: 25px;
+      color: #ccc;
+    }
+    
 
-      .icon {
-        margin-right: 15px;
-      }
-      .iconfont {
-        font-size: 40px;
-      }
-    }
-    .addNew {
-      .iconfont {
-        font-size: 30px;
-      }
-    }
   }
+  .friendlist{
+      padding-left: 20px;
+    }
 }
 </style>

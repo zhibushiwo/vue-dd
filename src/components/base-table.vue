@@ -1,30 +1,22 @@
 <template>
-  <ul class="table-wrap">
-    <li class="friends" v-for="(item,index) in friends" :key="index">
-      <div class="avatar">
-        <img :src="item.avatar" />
-      </div>
-      <div class="info">
-        <div class="userName">{{item.userName}}</div>
-        <div class="desc" v-if="item.desc">{{item.desc}}</div>
-      </div>
-    </li>
-  </ul>
+    <div class="base-table">
+
+    </div>
 </template>
 
 <script>
 export default {
-  props: {
-    friends: {
-      type: Array,
-      default: () => []
-    }
-  },
-  data() {
-    return {};
-  },
-  methods: {},
-  components: {}
+    data() {
+        return {
+
+        };
+    },
+    methods: {
+
+    },
+    components: {
+
+    },
 };
 </script>
 
