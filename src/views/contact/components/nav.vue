@@ -26,6 +26,7 @@ export default {
   font-size: $font-size-lg;
   border-bottom: 1px solid $border-color-light;
   padding: 0 15px;
+  cursor: pointer;
   .icon {
     margin-right: 15px;
     .iconfont {

@@ -1,6 +1,7 @@
 <template>
-  <div class="newfriends"></div>
-  
+  <div class="newfriends">
+    
+  </div>
 </template>
 
 <script>

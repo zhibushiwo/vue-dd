@@ -55,5 +55,8 @@ export default {
     width: $aside-width;
     border-right: 1px solid #ddd;
   }
+  .content{
+    flex: 1;
+  }
 }
 </style>

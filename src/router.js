@@ -4,7 +4,6 @@ Vue.use(Router)
 
 
 export const menuRoutes = [
-  
   {
     path: '/message',
     name: 'message',
